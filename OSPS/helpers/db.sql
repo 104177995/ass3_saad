@@ -1,9 +1,17 @@
+-- Create the database if it does not exist
+CREATE DATABASE IF NOT EXISTS test;
+
+-- Use the database
+USE test;
+
+-- Create the users table if it does not exist
 CREATE TABLE IF NOT EXISTS users (
     userID INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
     pwd VARCHAR(255) NOT NULL
 );
 
+-- Create the parkingSlots table if it does not exist
 CREATE TABLE IF NOT EXISTS parkingSlots (
     slotID INT AUTO_INCREMENT PRIMARY KEY,
     loc VARCHAR(255) NOT NULL,
@@ -15,11 +23,13 @@ CREATE TABLE IF NOT EXISTS parkingSlots (
     FOREIGN KEY (userID) REFERENCES users(userID)
 );
 
+-- Insert sample data into users table
 INSERT INTO users (email, pwd) VALUES 
 ('user1@gmail.com', 'password1'),
 ('user2@gmail.com', 'password2'),
 ('user3@gmail.com', 'password3');
 
+-- Insert sample data into parkingSlots table
 INSERT INTO parkingSlots (loc, timeSlot, lotNumber, vehicleType, imageSlot) VALUES
 ('80 Duy Tan', '2024-12-01 08:00:00', 1, 'car', 'https://static.vecteezy.com/system/resources/thumbnails/008/957/252/small_2x/flat-red-car-icon-clipart-in-cartoon-graphic-illustration-design-vector.jpg'),
 ('80 Duy Tan', '2024-12-01 08:30:00', 2, 'motorbike', 'https://i.pinimg.com/564x/84/4a/30/844a30f588f42e18cae21e0e0430ce25.jpg'),
