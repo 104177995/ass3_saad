@@ -1,7 +1,7 @@
 <?php
-require_once '../core/Database.php';
-require_once '../models/User.php';
-require_once '../interfaces/Authentication.php';
+require_once __DIR__ . '/../core/Database.php';
+require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../interfaces/Authentication.php';
 session_start();
 
 class AuthController implements Authentication {
@@ -74,7 +74,7 @@ class AuthController implements Authentication {
     }
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? null;
     $password = $_POST['password'] ?? null;
     $action = $_POST['action'];

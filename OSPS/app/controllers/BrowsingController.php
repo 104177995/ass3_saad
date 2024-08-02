@@ -1,6 +1,6 @@
 <?php
-require_once '../models/ParkingSlot.php';
-require_once '../models/Database.php'; 
+require_once __DIR__ . '/../models/ParkingSlot.php';
+require_once __DIR__ . '/../core/Database.php'; 
 
 class BrowsingController {
     private $parkingSlotModel;
