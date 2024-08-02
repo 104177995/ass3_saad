@@ -1,6 +1,6 @@
 <?php
 require_once '../core/Database.php';
-require_once '../models/Customer.php';
+require_once '../models/User.php';
 require_once '../interfaces/Authentication.php';
 session_start();
 
@@ -79,9 +79,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? null;
     $action = $_POST['action'];
     $authController = new AuthController();
-    $customer = new Customer($email, $password);
+    $user = new User($email, $password);
     if ($action === 'sign-up') {
-        $authController->signUp($customer);
+        $authController->signUp($user);
     } elseif ($action === 'sign-in') {
         $authController->signIn($email, $password);
     } elseif ($action === 'logout') {
