@@ -31,3 +31,5 @@ INSERT INTO parkingSlots (loc, timeSlot, lotNumber, vehicleType, imageSlot) VALU
 ('80 Duy Tan', '2024-12-01 11:30:00', 8, 'motorbike', 'https://i.pinimg.com/564x/84/4a/30/844a30f588f42e18cae21e0e0430ce25.jpg'),
 ('80 Duy Tan', '2024-12-01 12:00:00', 9, 'car', 'https://static.vecteezy.com/system/resources/thumbnails/008/957/252/small_2x/flat-red-car-icon-clipart-in-cartoon-graphic-illustration-design-vector.jpg'),
 ('80 Duy Tan', '2024-12-01 12:30:00', 10, 'motorbike', 'https://i.pinimg.com/564x/84/4a/30/844a30f588f42e18cae21e0e0430ce25.jpg');
+('80 Duy Tan', '2024-12-01 13:00:00', 11, 'car', 'https://static.vecteezy.com/system/resources/thumbnails/008/957/252/small_2x/flat-red-car-icon-clipart-in-cartoon-graphic-illustration-design-vector.jpg'),
+('80 Duy Tan', '2024-12-01 13:30:00', 12, 'motorbike', 'https://i.pinimg.com/564x/84/4a/30/844a30f588f42e18cae21e0e0430ce25.jpg');
