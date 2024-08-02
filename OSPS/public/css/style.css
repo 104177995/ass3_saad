@@ -350,6 +350,7 @@ nav form button:hover{
 
 .bookBut {
     border-radius: 10px;
+    margin-bottom: 20px;
     font-weight: bold;
 }
 
