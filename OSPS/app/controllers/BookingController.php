@@ -15,12 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'book') {
 
     if ($result) {
         $_SESSION['message'] = "Slot booked successfully!";
-        header('Location: ../views/managing/manage.php');
+        header("Location: ../views/managing/manage.php");
     } else {
         $_SESSION['message'] = "This slot was already booked.";
+        header('Location: ../views/browsing/browse.php');
     }
-
-    header('Location: ../views/browsing/browse.php');
     exit();
 }
 ?>

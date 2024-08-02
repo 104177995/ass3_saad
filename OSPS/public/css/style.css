@@ -61,16 +61,6 @@ button {
     transform: translate3d(-640px, 0, 0);
 }
 
-/* button {
-    display: block;
-    margin: 0 auto;
-    width: 260px;
-    height: 36px;
-    border-radius: 30px;
-    color: #fff;
-    font-size: 15px;
-    cursor: pointer;
-} */
 
 .img {
     overflow: hidden;
@@ -360,4 +350,21 @@ nav form button:hover{
 
 .bookBut {
     border-radius: 10px;
+    font-weight: bold;
+}
+
+#book {
+    height: 550px;
+}
+
+#can {
+    background-color: rgb(234, 29, 29);
+    color: black;
+    font-weight: bold;
+}
+
+#pay {
+    background-color: rgb(47, 158, 255);
+    color: black;
+    font-weight: bold;
 }

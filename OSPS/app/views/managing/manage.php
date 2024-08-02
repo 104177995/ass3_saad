@@ -43,13 +43,15 @@ $bookedSlots = $reservationModel->getSlotsByUser($userId);
             <p>No slots booked by you.</p>
         <?php else: ?>
             <?php foreach ($bookedSlots as $slot): ?>
-                <div class="card">
+                <div class="card" id="book">
                     <img src="<?php echo htmlspecialchars($slot['imageSlot']); ?>" alt="Parking Slot Image">
                     <h3><?php echo htmlspecialchars($slot['timeSlot']); ?></h3>
                     <p><?php echo htmlspecialchars($slot['loc']); ?></p>
                     <p><?php echo htmlspecialchars($slot['vehicleType']); ?></p>
                     <p>Lot Number: <?php echo htmlspecialchars($slot['lotNumber']); ?></p>
                     <p>Booked By: <?php echo htmlspecialchars($slot['userID']); ?></p>
+                    <button type="submit" name="action" value="delete" class="bookBut" id="can">Cancel reservation</button>
+                    <button type="submit" name="action" value="pay" class="bookBut" id="pay">Make a payment</button>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
