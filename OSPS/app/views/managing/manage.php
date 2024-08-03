@@ -48,7 +48,7 @@ $bookedSlots = $reservationModel->getSlotsByUser($userId);
                     <h3><?php echo htmlspecialchars($slot['timeSlot']); ?></h3>
                     <p><?php echo htmlspecialchars($slot['loc']); ?></p>
                     <p><?php echo htmlspecialchars($slot['vehicleType']); ?></p>
-                    <p>Lot Number: <?php echo htmlspecialchars($slot['lotNumber']); ?></p>
+                    <p>Slot Number: <?php echo htmlspecialchars($slot['lotNumber']); ?></p>
                     <p>Booked By: <?php echo htmlspecialchars($slot['userID']); ?></p>
                     <button type="submit" name="action" value="delete" class="bookBut" id="can">Cancel reservation</button>
                     <button type="submit" name="action" value="pay" class="bookBut" id="pay">Make a payment</button>
