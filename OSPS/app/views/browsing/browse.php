@@ -45,7 +45,7 @@ $parkingSlots = $parkingSlotModel->getAllSlots();
                 <h3><?php echo htmlspecialchars($slot['timeSlot']); ?></h2>
                 <p><?php echo htmlspecialchars($slot['loc']); ?></p>
                 <p><?php echo htmlspecialchars($slot['vehicleType']); ?></p>
-                <p>Lot Number: <?php echo htmlspecialchars($slot['lotNumber']); ?></p>
+                <p>Slot Number: <?php echo htmlspecialchars($slot['lotNumber']); ?></p>
                 <form action="../../controllers/BookingController.php" method="POST">
                     <input type="hidden" name="slot_id" value="<?php echo htmlspecialchars($slot['lotNumber']); ?>">
                     <button type="submit" name="action" value="book" class="bookBut">Book a slot</button>
