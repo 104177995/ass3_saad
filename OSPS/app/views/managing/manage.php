@@ -50,7 +50,14 @@ $bookedSlots = $reservationModel->getSlotsByUser($userId);
                     <p><?php echo htmlspecialchars($slot['vehicleType']); ?></p>
                     <p>Slot Number: <?php echo htmlspecialchars($slot['lotNumber']); ?></p>
                     <p>Booked By: <?php echo htmlspecialchars($slot['userID']); ?></p>
-                    <button type="submit" name="action" value="delete" class="bookBut" id="can">Cancel reservation</button>
+                    
+                    <!-- Form to cancel reservation -->
+                    <form action="../../controllers/ReservationController.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="action" value="cancel">
+                        <input type="hidden" name="slotId" value="<?php echo htmlspecialchars($slot['lotNumber']); ?>">
+                        <button type="submit" class="bookBut" id="can">Cancel reservation</button>
+                    </form>
+        
                     <button type="submit" name="action" value="pay" class="bookBut" id="pay">Make a payment</button>
                 </div>
             <?php endforeach; ?>

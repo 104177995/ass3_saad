@@ -35,5 +35,24 @@ class Reservation {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
+    //Cancel slots
+    public function cancelReservation($slotId) {
+        // Ensure that the table schema is correct and matches the column names
+        $query = 'UPDATE ' . $this->table . ' SET userID = NULL WHERE lotNumber = :slotId AND userID = :userId';
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindValue(':slotId', $slotId, PDO::PARAM_INT);
+        $stmt->bindValue(':userId', $_SESSION['userId'], PDO::PARAM_INT);
+        
+        if ($stmt->execute()) {
+            // Debugging: Log successful execution
+            error_log("Reservation cancelled successfully for slot ID: $slotId");
+            return true;
+        } else {
+            // Debugging: Log the error message
+            error_log("Failed to cancel reservation for slot ID: $slotId. Error: " . implode(" ", $stmt->errorInfo()));
+            return false;
+        }
+    }
 }
 ?>
